@@ -1,1 +1,103 @@
 CODE SPLITTING
+
+https://reactjs.org/docs/react-component.html
+
+
+COMPONENTE DE REACT
+
+1- Los componentes de react son funciones en mayuscula con retorno
+
+function App(){ return "" }
+let App = function(){ return "" }
+let App = () => { return "" }
+class App { 
+
+    render(){
+        return "" 
+
+    }
+
+}
+
+
+
+JSX
+App()       ===     <App/>
+
+
+
+
+
+//archivo.js
+(function(__dirname,__filename,require,module,...){
+
+//CommonJS
+import archivo2 from "./archivo2.js"
+let archivo2 = require("./archivo2.js")
+
+export default {x:1}
+module.exports = {x:1}
+
+})()
+
+
+
+CICLOS DE VIDA
+
+mount
+constructor() : Es el primer metodo de un componente. Nos sirve para crear metodos o state
+
+
+render
+render() : Se ejecuta cuando el componente se dibuja por primera vez y cada vez que el mismo cambia su state o sus props
+
+unmount
+
+
+
+
+
+CONTEXTO = Es la variable this y por defecto hace referencia al objeto que la contiene
+
+
+window.foo = function(){}
+var foo = function(){}
+
+function foo(){
+    console.log(this)
+}
+
+window.foo()
+
+
+
+
+let obj = {
+    x : 1 , 
+    fn : function(){
+
+        console.log(this)
+
+        window.setTimeout(function(){
+            console.log(this)
+        })
+
+    }
+}
+
+obj.fn()
+
+
+
+function foo(a,b){
+    console.log(a,b)
+    console.log(this)
+}
+
+
+foo(1,2) // 1 2
+
+foo.call({x:1},1,2) //1 2 {x:1}
+foo.apply({x:1},[1,2]) //1 2 {x:1}
+new foo(1,2) //1 2 {}
+foo.bind({x:1},1,2) 
