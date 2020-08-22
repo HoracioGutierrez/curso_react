@@ -7,14 +7,9 @@ class Main extends React.Component {
         this.state = {
             contador : 0
         }
-        this.aumentarContador = this.aumentarContador.bind(this)
     }
 
-    componentDidMount(){
-        console.log("Estoy en pantalla")
-    }
-
-    aumentarContador(){
+    aumentarContador = () => {
         this.setState({
             contador : this.state.contador + 1
         }) 
