@@ -1,1 +1,8 @@
 https://www.youtube.com/watch?v=HiXLkL42tMU&t=136s
+
+
+
+
+STATE y PROPS 
+
+- Por defecto solo los componentes de tipo class son los que pueden tener estado local

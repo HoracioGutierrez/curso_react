@@ -10,9 +10,15 @@ class Main extends React.Component {
     }
 
     aumentarContador = () => {
-        this.setState({
-            contador : this.state.contador + 1
-        }) 
+        this.setState({ contador : this.state.contador + 1 }) 
+    }
+
+    restarContador = () => {
+        this.setState({ contador : this.state.contador - 1 }) 
+    }
+
+    resetearContador = () => {
+        this.setState({ contador : 0 }) 
     }
 
     render(){
@@ -23,8 +29,8 @@ class Main extends React.Component {
                 { this.state.contador > 5
                 ? <p>Llego al maximo!</p> : null }
                 <button onClick={this.aumentarContador}>+</button>
-                <button>resetear</button>
-                <button>-</button>
+                <button onClick={this.resetearContador}>resetear</button>
+                <button onClick={this.restarContador}>-</button>
             </main>
         )
     }
