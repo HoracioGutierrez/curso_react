@@ -38,3 +38,12 @@ let {x,y,z} = obj
 let x = obj.x
 let y = obj.y
 let z = obj.z
+
+
+
+let arr = [1,2,3,4,5]
+
+arr.forEach((e,i)=>{}) : void
+
+
+arr.map((e,i)=>{}) : Array

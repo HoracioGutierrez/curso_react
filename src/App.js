@@ -8,7 +8,8 @@ class App extends React.Component{
     constructor(){
         super()
         this.state = {
-            contador : 0
+            contador : 0,
+            links : ["usuarios","productos","contacto"]
         }
     }
 
@@ -25,18 +26,17 @@ class App extends React.Component{
     }
 
     render(){
+        let {links,contador} = this.state
         return (
             <>
-                <Header/>
+                <Header links={links}/>
                 <Main 
-                    contador={this.state.contador}
+                    contador={contador}
                     aumentarContador={this.aumentarContador}
                     restarContador={this.restarContador}
                     resetearContador={this.resetearContador}
                 />
-                <Footer
-                    contador={this.state.contador}
-                />                
+                <Footer/>                
             </> 
         ) 
     }
