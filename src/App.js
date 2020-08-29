@@ -11,8 +11,12 @@ class App extends React.Component{
         this.state = {
             contador : 0,
             links : ["usuarios","productos","contacto"],
-            nombre : "",
-            apellido : "",
+            nombre : '',
+            apellido : '',
+            form : {
+                nombre : "",
+                apellido : ""
+            },
             usuarios : []
         }
     }
