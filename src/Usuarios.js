@@ -1,7 +1,7 @@
 import React from "react"
+import ListadoUsuarios from "./ListadoUsuarios"
 
-
-const Usuarios = ({nombre,apellido,usuarios,manejarElSubmit,manejarCambioNombre,manejarCambioApellido}) => 
+const Usuarios = ({nombre,apellido,usuarios,manejarElSubmit,manejarCambioNombre,manejarCambioApellido,borrarUsuario}) => 
     <>
         <form onSubmit={manejarElSubmit}>
             <div>
@@ -12,7 +12,10 @@ const Usuarios = ({nombre,apellido,usuarios,manejarElSubmit,manejarCambioNombre,
             </div>
             <button>Guardar</button>
         </form>
-        <ul></ul>
+        <ListadoUsuarios 
+            usuarios={usuarios}
+            borrarUsuario={borrarUsuario}
+        />
     </>
 
 export default Usuarios

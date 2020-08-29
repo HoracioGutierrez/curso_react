@@ -47,3 +47,52 @@ arr.forEach((e,i)=>{}) : void
 
 
 arr.map((e,i)=>{}) : Array
+
+
+
+
+
+OPERADOR REST / SPREAD (...)
+
+
+let arr = [1,2,3]
+let copia = arr.slice(0)
+
+let copia = [...arr]
+
+
+function foo(...params){
+    console.log(params) //[1,2,3]
+}
+
+
+foo(1,2,3)
+
+
+
+
+
+
+
+
+
+
+
+
+SYMBOL
+PROTOCOLO ITERABLE - ITERATOR
+GENERATOR FUNCTION
+
+
+
+function foo(i){
+    this
+}
+
+
+let copia = foo.bind(null,i)
+
+
+
+PUBLICACION Y SUBSCRIPCION
+
