@@ -2,7 +2,7 @@ import React from "react"
 import Header from "./Header"
 import Main from "./Main"
 import Footer from "./Footer"
-import Usuarios from "./Usuarios"
+import Usuarios from "../componentes/Usuarios"
 
 class App extends React.Component{
     
@@ -10,7 +10,6 @@ class App extends React.Component{
         super()
         this.state = {
             contador : 0,
-            links : ["usuarios","productos","contacto"],
             form : {
                 nombre : "",
                 apellido : ""
@@ -96,10 +95,10 @@ class App extends React.Component{
     }
 
     render(){
-        let {links,contador,form,usuarios} = this.state
+        let {contador,form,usuarios} = this.state
         return (
             <>
-                <Header links={links}/>
+                <Header/>
                 <Main 
                     contador={contador}
                     aumentarContador={this.aumentarContador}

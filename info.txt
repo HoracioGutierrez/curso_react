@@ -96,3 +96,66 @@ let copia = foo.bind(null,i)
 
 PUBLICACION Y SUBSCRIPCION
 
+REDUX - REACT-REDUX
+
+
+store : Analogo al state de un componente (createStore/createContext/this.state={})
+reducer : funcion pura - Nos describe como va a verse el store en un momento dado de la aplicacion
+actions : funcion pura - Analogos a los metodos de un componente
+
+Provider : Analogo a Provider de Context API y nos sirve para publicar el store en toda la aplicacion
+connect()() : Es un HoC que conecta el componente con redux. Toma dos parametros, ambos dos son funciones que tienen que retornar un objeto. La primera sirve para usar nuestro store actual y la segunda sirve para
+
+
+CURRYING 
+
+function connect(){
+
+    return function(){
+
+    }
+
+}
+
+
+let connect => () => () => {
+
+}
+
+
+
+
+let connect => (props) => (Componente) => {
+    
+    class Wrapper extends React.Component {
+        render(){
+            return <Componente {...props}/>
+        }
+    }
+
+}
+
+
+
+
+
+
+
+src/
+    |_index.js
+    |_estilos.css
+    |_ui/
+        |_layout/
+            |_App.js
+            |_Footer.js
+            |_Header.js
+            |_Main.js
+        |_paginas/
+        |_componentes
+    |_api/
+        |_store.js
+        |_reducer.js
+        |_actions.js
+
+
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
