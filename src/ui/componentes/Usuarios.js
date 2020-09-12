@@ -1,5 +1,8 @@
 import React from "react"
 import ListadoUsuarios from "./ListadoUsuarios"
+import {connect} from "react-redux"
+import {manejarElSubmit,manejarCambioApellido,manejarCambioNombre} from "../../api/actions"
+import {bindActionCreators} from "redux"
 
 const Usuarios = ({nombre,apellido,usuarios,manejarElSubmit,manejarCambioNombre,manejarCambioApellido,borrarUsuario}) => 
     <>
@@ -18,4 +21,13 @@ const Usuarios = ({nombre,apellido,usuarios,manejarElSubmit,manejarCambioNombre,
         />
     </>
 
-export default Usuarios
+export default connect(
+    ({form})=> ({ nombre : form.nombre , apellido : form.apellido }),
+    (dispatch)=>{
+        return {
+            manejarElSubmit : bindActionCreators(manejarElSubmit,dispatch),
+            manejarCambioNombre : bindActionCreators(manejarCambioNombre,dispatch),
+            manejarCambioApellido : bindActionCreators(manejarCambioApellido,dispatch)
+        }
+    }
+)(Usuarios)

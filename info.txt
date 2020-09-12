@@ -104,7 +104,7 @@ reducer : funcion pura - Nos describe como va a verse el store en un momento dad
 actions : funcion pura - Analogos a los metodos de un componente
 
 Provider : Analogo a Provider de Context API y nos sirve para publicar el store en toda la aplicacion
-connect()() : Es un HoC que conecta el componente con redux. Toma dos parametros, ambos dos son funciones que tienen que retornar un objeto. La primera sirve para usar nuestro store actual y la segunda sirve para
+connect()() : Es un HoC que conecta el componente con redux. Toma dos parametros, ambos dos son funciones que tienen que retornar un objeto. La primera sirve para usar nuestro store actual y la segunda sirve para habilitar actions en el componente
 
 
 CURRYING 
@@ -159,3 +159,31 @@ src/
 
 
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+
+
+
+//archivo1.js
+
+let a = true
+
+//ES6
+export default a
+export a 
+
+//CommonJS
+//module.exports === {}
+//module.exports = a
+module.exports.a = a
+
+
+
+
+//archivo2.js
+//ES6
+import {a} from "./modulo2"
+import {connect} from "react-redux"
+
+//CommonJS
+const connect = require("react-redux").connect
+
+

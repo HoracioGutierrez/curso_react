@@ -10,42 +10,4 @@ const Header = ({links}) =>
         </nav>
     </header>
 
-/* let mapStateToProps = (store) => { 
-    return {
-        //el nombre de prop : el valor del store
-        links : store.links
-    } 
-} */
-
-
-
-/* let mapStateToProps = (store) => { 
-    let {links} = store
-    return {
-        //el nombre de prop : el valor del store
-        links : links
-    } 
-} */
-
-
-
-/* let mapStateToProps = (store) => { 
-    let {links} = store
-    return { links } 
-} */
-
-
-/* let mapStateToProps = ({links}) => { 
-    return { links } 
-} */
-
-
-/* let mapStateToProps = ({links}) => ({ links })  */
-
-/* let b = () => { return {} } */
-
-
-/* export default connect(mapStateToProps)(Header) */
-
-
 export default connect(({links}) => ({ links }))(Header)
