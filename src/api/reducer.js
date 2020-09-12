@@ -1,62 +1,8 @@
-let init = {
-    links : ["usuarios","productos","contacto"],
-    contador : 0,
-    form : {
-        nombre : "",
-        apellido : ""
-    },
-    usuarios : []
-}
+import {combineReducers} from "redux"
+import App from "./reducers/App"
+import Usuarios from "./reducers/Usuarios"
+import Contador from "./reducers/Contador"
 
-
-let reducer = (prevState = init,action) => {
-    switch(action.type){
-        case "MANEJAR_SUBMIT" : 
-            return {
-                ...prevState,
-                usuarios : [
-                    ...prevState.usuarios,
-                    prevState.form
-                ],
-                form : {
-                    nombre : "",
-                    apellido : ""
-                }
-            }
-        case "MANEJAR_APELLIDO" : 
-            return {
-                ...prevState,
-                form : {
-                    nombre : prevState.form.nombre,
-                    apellido : action.apellido
-                }
-            }
-        case "MANEJAR_NOMBRE" : 
-            return {
-                ...prevState,
-                form : {
-                    apellido : prevState.form.apellido,
-                    nombre : action.nombre
-                }
-            }
-        case "CONTADOR_SUMAR":
-            return {
-                ...prevState ,
-                contador : prevState.contador + 1
-            }
-        case "CONTADOR_RESTAR":
-            return {
-                ...prevState , 
-                contador : prevState.contador - 1
-            }
-        case "CONTADOR_RESETEAR":
-            return {
-                ...prevState , 
-                contador : 0
-            }
-        default :
-            return prevState    
-    }
-}
+let reducer = combineReducers({ App , Usuarios , Contador })
 
 export default reducer

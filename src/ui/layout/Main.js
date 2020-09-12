@@ -1,6 +1,6 @@
 import React from "react"
 import {connect} from "react-redux"
-import {aumentarContador,resetearContador,restarContador} from "../../api/actions"
+import {aumentarContador,resetearContador,restarContador} from "../../api/actions/Contador"
 import {bindActionCreators} from "redux"
 
 const Main = ({contador,aumentarContador,resetearContador,restarContador}) => 
@@ -24,6 +24,6 @@ let mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-    ({contador}) => ({contador}),
+    ({Contador}) => ({contador:Contador.contador}),
     mapDispatchToProps
 )(Main)

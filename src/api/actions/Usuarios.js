@@ -1,18 +1,3 @@
-export let aumentarContador = () => {
-    return {type:"CONTADOR_SUMAR"}
-}
-
-
-export let restarContador = () => {
-    return {type:"CONTADOR_RESTAR"}
-}
-
-
-export let resetearContador = () => {
-    return {type:"CONTADOR_RESETEAR"}
-}
-
-
 export let manejarElSubmit = (e) => {
     e.preventDefault()
     return { type : "MANEJAR_SUBMIT" }
@@ -26,4 +11,15 @@ export let manejarCambioNombre = (e) => {
 export let manejarCambioApellido = (e) => {
     let apellido = e.target.value
     return { type : "MANEJAR_APELLIDO" , apellido }
+}
+
+export let borrarUsuario = (i) => {
+    /* let start = this.state.usuarios.slice(0,i)
+    let end = this.state.usuarios.slice(i+1)
+
+    let nuevos_usuarios = [
+        ...start,
+        ...end
+    ] */
+    return { type : "MANEJAR_BORRAR" , i }
 }

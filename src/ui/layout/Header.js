@@ -10,4 +10,5 @@ const Header = ({links}) =>
         </nav>
     </header>
 
-export default connect(({links}) => ({ links }))(Header)
+
+export default connect(({App}) => ({ links : App.links }))(Header)
