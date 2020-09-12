@@ -187,3 +187,17 @@ import {connect} from "react-redux"
 const connect = require("react-redux").connect
 
 
+
+CODE SPLITTING / IMPORTS DINAMICOS
+
+
+
+https://reactrouter.com/web/guides/quick-start
+
+
+Router 
+
+BrowserRouter : History API 
+HashRouter : location.Hash
+MemoryRouter : 
+StaticRouter : SSR Server Side Rendering

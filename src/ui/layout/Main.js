@@ -3,13 +3,24 @@ import {connect} from "react-redux"
 import {aumentarContador,resetearContador,restarContador} from "../../api/actions/Contador"
 import {bindActionCreators} from "redux"
 
+import Usuarios from "../paginas/Usuarios"
+import Contacto from "../paginas/Contacto"
+import Productos from "../paginas/Productos"
+
+import {Route,Switch} from "react-router-dom"
+
 const Main = ({contador,aumentarContador,resetearContador,restarContador}) => 
     <main>
-        <h2>Home</h2>
+        <Switch>
+            <Route path="/usuarios" component={Usuarios}/>
+            <Route path="/productos" component={Productos}/>
+            <Route path="/contacto" component={Contacto}/>
+        </Switch>
+        {/* <h2>Home</h2>
         <p>El contador va :  {contador}</p>
         <button onClick={aumentarContador}>+</button>
         <button onClick={resetearContador}>resetear</button>
-        <button onClick={restarContador}>-</button>
+        <button onClick={restarContador}>-</button> */}
     </main>
 
 
